@@ -59,9 +59,9 @@ class CustomView(
     private val arcOval by lazy {
         RectF(
             centerOfX,
-            17.5f,
-            centerOfX + width - 90f,
-            height.toFloat() - 17.5f
+            15f,
+            centerOfX + width - 70f,
+            height.toFloat() - 15f
         )
     }
 
@@ -83,7 +83,7 @@ class CustomView(
         canvas.drawLine(START_COORDINATE, START_COORDINATE, defaultStartX, START_COORDINATE, backgroundPaint)
         canvas.drawLine(START_COORDINATE, START_COORDINATE, START_COORDINATE, height.toFloat(), backgroundPaint)
         canvas.drawArc(arcOval, START_ANGLE, SWEEP_ANGLE, true, rectangleBackgroundPaint)
-        canvas.drawRect(5f,20f, defaultStartX - 20f, height - 20f, rectangleBackgroundPaint)
+        canvas.drawRect(5f,15f, defaultStartX - 10f, height - 15f, rectangleBackgroundPaint)
         canvas.drawText(
             customText,
             textCoordinateX,
