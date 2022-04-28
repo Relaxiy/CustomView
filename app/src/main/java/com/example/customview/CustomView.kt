@@ -37,9 +37,17 @@ class CustomView(
             strokeWidth = LETTERS_LINE_WIDTH
         }
 
+
     private val backgroundPaint = Paint(ANTI_ALIAS_FLAG)
         .apply {
             strokeWidth = LINE_WIDTH
+            style = Style.STROKE
+            color = context.getColor(R.color.black)
+        }
+
+    private val rightLinePaint = Paint(ANTI_ALIAS_FLAG)
+        .apply {
+            strokeWidth = 5f
             style = Style.STROKE
             color = context.getColor(R.color.black)
         }
@@ -77,8 +85,8 @@ class CustomView(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        canvas.drawLine(defaultStartX, height.toFloat(), stopX, height/2f, backgroundPaint)
-        canvas.drawLine(defaultStartX, START_COORDINATE, stopX, height/2f, backgroundPaint)
+        canvas.drawLine(defaultStartX, height.toFloat(), stopX, height/2f, rightLinePaint)
+        canvas.drawLine(defaultStartX, START_COORDINATE, stopX, height/2f, rightLinePaint)
         canvas.drawLine(START_COORDINATE, height.toFloat(), defaultStartX, height.toFloat(), backgroundPaint)
         canvas.drawLine(START_COORDINATE, START_COORDINATE, defaultStartX, START_COORDINATE, backgroundPaint)
         canvas.drawLine(START_COORDINATE, START_COORDINATE, START_COORDINATE, height.toFloat(), backgroundPaint)
