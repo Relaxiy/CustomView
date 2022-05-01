@@ -18,8 +18,8 @@ class CustomView(
         private const val LINE_WIDTH = 10f
         private const val LETTERS_LINE_WIDTH = 100f
         private const val START_COORDINATE = 0f
-        private const val START_ANGLE = 102f
-        private const val SWEEP_ANGLE = 156f
+        private const val START_ANGLE = 113f
+        private const val SWEEP_ANGLE = 133f
     }
 
     init {
@@ -66,10 +66,10 @@ class CustomView(
 
     private val arcOval by lazy {
         RectF(
-            centerOfX,
-            15f,
-            centerOfX + width - 70f,
-            height.toFloat() - 15f
+            width - textCoordinateX - 50f,
+            5f,
+            width - textCoordinateX + 123f,
+            height.toFloat() - 5f
         )
     }
 
@@ -84,13 +84,13 @@ class CustomView(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawLine(defaultStartX, height.toFloat(), stopX, height/2f, rightLinePaint)
-        canvas.drawLine(defaultStartX, START_COORDINATE, stopX, height/2f, rightLinePaint)
-        canvas.drawLine(textCoordinateX - 50f, height.toFloat(), width - textCoordinateX, height.toFloat(), backgroundPaint)
-        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, width - textCoordinateX, START_COORDINATE, backgroundPaint)
+        canvas.drawLine(width - textCoordinateX + 15f, height.toFloat(), width - textCoordinateX + 55f, height/2f, rightLinePaint)
+        canvas.drawLine(width - textCoordinateX + 15f, START_COORDINATE, width - textCoordinateX + 55f, height/2f, rightLinePaint)
+        canvas.drawLine(textCoordinateX - 50f, height.toFloat(), width - textCoordinateX + 15f, height.toFloat(), backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, width - textCoordinateX + 15f, START_COORDINATE, backgroundPaint)
         canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, textCoordinateX - 50f, height.toFloat(), backgroundPaint)
         canvas.drawArc(arcOval, START_ANGLE, SWEEP_ANGLE, true, rectangleBackgroundPaint)
-        canvas.drawRect(textCoordinateX - 50f,15f, defaultStartX - 10f, height - 15f, rectangleBackgroundPaint)
+        canvas.drawRect(textCoordinateX - 50f,15f, width - textCoordinateX, height - 15f, rectangleBackgroundPaint)
         canvas.drawText(
             customText,
             textCoordinateX,
