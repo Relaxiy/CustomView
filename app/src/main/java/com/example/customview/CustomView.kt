@@ -88,7 +88,7 @@ class CustomView(
         canvas.drawLine(width - textCoordinateX + 15f, START_COORDINATE, width - textCoordinateX + 55f, height/2f, rightLinePaint)
         canvas.drawLine(textCoordinateX - 50f, height.toFloat(), width - textCoordinateX + 15f, height.toFloat(), backgroundPaint)
         canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, width - textCoordinateX + 15f, START_COORDINATE, backgroundPaint)
-        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, textCoordinateX - 50f, height.toFloat(), backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, textCoordinateX - 50f, height.toFloat(), rightLinePaint)
         canvas.drawArc(arcOval, START_ANGLE, SWEEP_ANGLE, true, rectangleBackgroundPaint)
         canvas.drawRect(textCoordinateX - 50f,15f, width - textCoordinateX, height - 15f, rectangleBackgroundPaint)
         canvas.drawText(
