@@ -77,7 +77,7 @@ class CustomView(
         super.onLayout(changed, left, top, right, bottom)
         textPaint.textSize = height/3.5f
         defaultStartX = width/1.15f
-        stopX = width.toFloat() - 15f
+        stopX = width.toFloat()
         textCoordinateX = centerOfX - textPaint.measureText(customText) / 1.8f
         textCoordinateY = height/1.7f
     }
@@ -86,8 +86,8 @@ class CustomView(
         super.onDraw(canvas)
         canvas.drawLine(defaultStartX, height.toFloat(), stopX, height/2f, rightLinePaint)
         canvas.drawLine(defaultStartX, START_COORDINATE, stopX, height/2f, rightLinePaint)
-        canvas.drawLine(textCoordinateX - 50f, height.toFloat(), defaultStartX, height.toFloat(), backgroundPaint)
-        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, defaultStartX, START_COORDINATE, backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, height.toFloat(), width - textCoordinateX, height.toFloat(), backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, width - textCoordinateX, START_COORDINATE, backgroundPaint)
         canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, textCoordinateX - 50f, height.toFloat(), backgroundPaint)
         canvas.drawArc(arcOval, START_ANGLE, SWEEP_ANGLE, true, rectangleBackgroundPaint)
         canvas.drawRect(textCoordinateX - 50f,15f, defaultStartX - 10f, height - 15f, rectangleBackgroundPaint)
