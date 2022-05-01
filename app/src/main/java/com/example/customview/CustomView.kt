@@ -84,14 +84,13 @@ class CustomView(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
         canvas.drawLine(defaultStartX, height.toFloat(), stopX, height/2f, rightLinePaint)
         canvas.drawLine(defaultStartX, START_COORDINATE, stopX, height/2f, rightLinePaint)
-        canvas.drawLine(START_COORDINATE, height.toFloat(), defaultStartX, height.toFloat(), backgroundPaint)
-        canvas.drawLine(START_COORDINATE, START_COORDINATE, defaultStartX, START_COORDINATE, backgroundPaint)
-        canvas.drawLine(START_COORDINATE, START_COORDINATE, START_COORDINATE, height.toFloat(), backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, height.toFloat(), defaultStartX, height.toFloat(), backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, defaultStartX, START_COORDINATE, backgroundPaint)
+        canvas.drawLine(textCoordinateX - 50f, START_COORDINATE, textCoordinateX - 50f, height.toFloat(), backgroundPaint)
         canvas.drawArc(arcOval, START_ANGLE, SWEEP_ANGLE, true, rectangleBackgroundPaint)
-        canvas.drawRect(5f,15f, defaultStartX - 10f, height - 15f, rectangleBackgroundPaint)
+        canvas.drawRect(textCoordinateX - 50f,15f, defaultStartX - 10f, height - 15f, rectangleBackgroundPaint)
         canvas.drawText(
             customText,
             textCoordinateX,
